@@ -1,0 +1,1837 @@
+<html>
+<head>
+  <meta name="title" content="Best MUN 2025 | NashCon MUN 2025">
+  <meta name="description" content="Join the Best MUN 2025 conference at NashCon MUN 2025. Experience top-notch debate, diplomacy, and networking opportunities.">
+  <meta name="author-info" content="@PSG™">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NashCon MUN - Model United Nations Conference</title>
+  <!-- Favicon -->
+  <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Raleway:wght@300;400;600&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --olive: #6b8e23;
+      --olive-dark: #556b2f;
+      --olive-light: #8f9779;
+      --beige: #f5f5dc;
+      --gold: #d4af37;
+      --primary-color: #1a3c34;
+      --secondary-color: #d4a76a;
+      --light-color: #fff7ed;
+      --dark-color: #1e1e1e;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--beige);
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--olive-dark);
+    }
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, #fff7ed, #ccb18e);
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+      border-radius: 0 0 15px 15px;
+    }
+    header.scrolled {
+      padding: 0.5rem 0;
+      background: #ccb18e;
+      backdrop-filter: blur(10px);
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo img {
+      height: 50px;
+      border-radius: 12px;
+      transition: all 0.5s ease;
+    }
+    header.scrolled .logo img {
+      height: 40px;
+    }
+    .logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(to right, #487748, #233f33);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.5s ease;
+      user-select: none;
+    }
+    header.scrolled .logo-text {
+      font-size: 1.5rem;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: #556b2f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      border-radius: 12px;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--gold);
+      transition: width 0.3s ease;
+      border-radius: 0 0 12px 12px;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: #6b8e23;
+      border-color: rgba(243, 156, 18, 0.8);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #556b2f;
+      font-size: 1.8rem;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .mobile-menu-btn:hover {
+      background: var(--olive-light);
+    }
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('src/bg.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      margin: 6.5rem 1rem 3rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+      border-radius: 15px;
+    }
+    .hero-content {
+      max-width: 800px;
+      z-index: 1;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards 0.5s;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      color: var(--gold);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      letter-spacing: 3px;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+    .hero .date {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      display: inline-block;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      margin: 0 0.5rem;
+      user-select: none;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+      background: #e6c12e;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: var(--olive-dark);
+      border-color: var(--olive-dark);
+    }
+    /* Section Base */
+    .section {
+      padding: 4rem 1.5rem 6rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      border-radius: 30px;
+      background:#fff7ed;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 2px solid var(--olive-light);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .section-title h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      display: inline-block;
+      position: relative;
+      color: var(--olive-dark);
+    }
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+    }
+    /* About Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1 1 350px;
+    }
+    .about-text h3 {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      margin-bottom: 1.2rem;
+      color: var(--olive);
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: var(--olive-dark);
+    }
+    .about-image {
+      flex: 1 1 320px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    /* Committees Section */
+    .committees-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .committee-card {
+      background: #F4F5F1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border: 2px solid var(--olive-light);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .committee-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(243, 156, 18, 0.8);
+      border-color: var(--gold);
+    }
+    .committee-image {
+      height: 230px;
+      overflow: hidden;
+      border-radius: 15px 15px 0 0;
+    }
+    .committee-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .committee-card:hover .committee-image img {
+      transform: scale(1.1);
+    }
+    .committee-content {
+      padding: 1rem 1.25rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .committee-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--olive-dark);
+      user-select: none;
+    }
+    .committee-content p {
+      color: #555;
+      flex-grow: 1;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    /* Core Members Section */
+    .core-members-section {
+      background: var(--light-color);
+      padding: 4rem 1.5rem 6rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      border-radius: 15px;
+      border: 2px solid var(--olive-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      text-align: center;
+    }
+    .core-members-section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--olive-dark);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .core-members-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+    }
+    .core-members-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .core-member-card {
+      background: #f5f5f5;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      padding-bottom: 1rem;
+    }
+    .core-member-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    .core-member-card .profile img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid var(--light-color);
+      transition: all 0.4s ease;
+      object-fit: cover;
+      margin-top: 1.5rem;
+    }
+    .core-member-card:hover .profile img {
+      border-color: var(--gold);
+      transform: scale(1.2) rotate(5deg);
+    }
+    .core-member-card .main-content {
+      margin-top: 1rem;
+    }
+    .core-member-card .name {
+      font-size: 1.3rem;
+      color: var(--olive-dark);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+    .core-member-card:hover .name {
+      color: var(--gold);
+    }
+    .core-member-card .title {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--olive);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .core-member-card .social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 0.5rem;
+    }
+    .core-member-card .social a {
+      color: var(--olive-dark);
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .core-member-card:hover .social a {
+      color: var(--gold);
+      transform: scale(1.3) rotate(10deg);
+    }
+    .core-member-card .skills {
+      padding: 0 1rem 1rem;
+    }
+    .core-member-card .skills h6 {
+      font-size: 1rem;
+      color: var(--olive-dark);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .core-member-card .skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    .core-member-card .skills ul li {
+      border: 1.5px solid #ddd;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      background: var(--light-color);
+      transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, transform 0.3s ease;
+    }
+    .core-member-card .skills ul li:hover {
+      background-color: var(--gold);
+      color: var(--light-color);
+      border-color: var(--gold);
+      transform: scale(1.1) rotate(3deg);
+    }
+    /* Schedule Section */
+    #schedule {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 3rem 1.5rem;
+      border-radius: 15px;
+      background: #fff7ed;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 5px solid var(--olive-light);
+    }
+    .section-title#schedule-title {
+      margin-bottom: 2rem;
+    }
+    .schedule-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .tab-btn {
+      padding: 0.8rem 1.4rem;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-weight: 600;
+      color: var(--olive);
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 12px 12px 0 0;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      border-bottom-color:rgba(243, 156, 18, 0.8);
+      color: var(--olive-dark);
+      background: #fff7edcc;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .schedule-item {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+      background: white;
+      border-radius: 15px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+      border: 2px solid var(--olive-light);
+      transition: all 0.3s ease;
+    }
+    .schedule-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      border-color: var(--gold);
+    }
+    .schedule-time {
+      flex: 0 0 130px;
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .schedule-details {
+      flex: 1;
+    }
+    .schedule-details h3 {
+      margin-bottom: 0.3rem;
+      color: var(--olive-dark);
+    }
+    .schedule-details p {
+      color: #222;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+    /* Registration Section */
+    .registration {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 3rem 1.5rem;
+      background: #fff7ed;
+      border-radius: 15px;
+      border: 2px solid var(--olive-dark);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .registration .section-title {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .registration-image:hover {
+      transform: scale(1.03);
+    }
+    .registration-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .registration-image {
+      flex: 1 1 50%;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .registration-image img {
+      width: 100%;
+      height: auto;
+    }
+    .registration-button {
+      flex: 1 1 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .registration-button .btn {
+      padding: 1rem 2rem;
+      background: var(--olive);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-top: 1rem;
+    }
+    .registration-button .btn:hover {
+      background: var(--olive-dark);
+    }
+    .registration-button p {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: var(--olive-dark);
+      text-align: center;
+    }
+    /* Testimonials Section */
+    .testimonials {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      border: 2px solid var(--olive-light);
+      background: var(--beige);
+      padding: 2rem 1.5rem;
+    }
+    .testimonials .section-title h2 {
+      margin-bottom: 2rem;
+    }
+    .testimonials-slider {
+      position: relative;
+      overflow: hidden;
+      height: 230px;
+    }
+    .testimonial {
+      background: white;
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      margin: 0 0.5rem;
+      opacity: 0;
+      transform: scale(0.95);
+      position: absolute;
+      width: calc(100% - 3rem);
+      top: 0;
+      left: 0;
+      transition: all 0.5s ease;
+    }
+    .testimonial.active {
+      opacity: 1;
+      transform: scale(1);
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: #444;
+      user-select: none;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .author-info h4 {
+      margin-bottom: 0.1rem;
+      color: var(--olive-dark);
+    }
+    .author-info p {
+      color: #777;
+      font-size: 0.85rem;
+    }
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.8rem;
+      gap: 1rem;
+    }
+    .slider-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: white;
+      border: 1.5px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--olive-dark);
+      transition: all 0.3s ease;
+    }
+    .slider-btn:hover {
+      background: var(--olive);
+      color: white;
+      border-color: var(--olive);
+    }
+    /* FAQ Section */
+    .faq-item {
+      background: white;
+      border-radius: 15px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .faq-item.active {
+      border-color: var(--gold);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+    }
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--olive-dark);
+      user-select: none;
+    }
+    .faq-question:hover {
+      background: var(--beige);
+    }
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.2rem;
+      max-height: 500px;
+    }
+    /* Contact Section */
+    .contact {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 3rem 1.5rem;
+      background: #fff7ed;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+      border: 2px solid var(--olive-light);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: center;
+    }
+    .contact-info {
+      flex: 1 1 350px;
+    }
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+      color: var(--olive-dark);
+      font-weight: 700;
+      user-select: none;
+    }
+    .contact-details {
+      margin-bottom: 2rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-detail i {
+      font-size: 1.3rem;
+      color: var(--olive);
+      margin-top: 3px;
+      min-width: 24px;
+    }
+    .contact-detail h4 {
+      margin-bottom: 0.3rem;
+      color: var(--olive-dark);
+      font-weight: 600;
+    }
+    .contact-detail p {
+      color: #666;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--olive);
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease;
+    }
+    .social-link:hover {
+      background: var(--olive);
+      color: white;
+      transform: translateY(-3px);
+    }
+    .contact-map {
+      flex: 1 1 400px;
+      height: 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid var(--olive-light);
+      transition: box-shadow 0.3s ease;
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .contact-map:hover {
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    }
+    /* Footer */
+    footer {
+      background: #223f33;
+      color: white;
+      padding: 3rem 1.5rem 2rem;
+      border-radius: 15px 15px 0 0;
+      user-select: none;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+    }
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+      position: relative;
+    }
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+    }
+    .footer-col p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.85;
+      transition: all 0.3s ease;
+    }
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--gold);
+      transform: translateX(5px);
+    }
+    .footer-newsletter input {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+    }
+    .footer-newsletter .btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .footer-newsletter .btn:hover {
+      background: #e6c12e;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    .footer-bottom a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .footer-bottom a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      background: var(--olive);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+      user-select: none;
+    }
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: var(--olive-dark);
+      transform: translateY(-5px);
+    }
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .header-container {
+        padding: 0 1rem;
+      }
+      .about-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .registration-container {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .contact {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .schedule-time {
+        flex: 0 0 120px;
+        font-size: 0.95rem;
+      }
+      .tab-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+      }
+    }
+    /* --- START: Improved Mobile Nav, Blur, Popup --- */
+    @media (max-width: 768px) {
+      /* Blurred overlay background when menu is active */
+      body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(40, 60, 40, 0.5);
+        backdrop-filter: blur(6px);
+        z-index: 998;
+        pointer-events: auto;
+        transition: opacity 0.3s;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+      nav ul {
+        position: fixed;
+        top: 70px;
+        right: 16px;
+        left: auto;
+        width: 220px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1rem;
+        border-radius: 18px;
+        padding: 1rem 0.5rem;
+        transition: transform 0.35s cubic-bezier(.23,1.01,.32,1), opacity 0.3s;
+        transform: translateY(-30px) scale(0.95);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1001;
+      }
+      nav ul.active {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      nav ul li {
+        width: 100%;
+        padding: 0.2rem 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      nav ul li a {
+        font-size: 1.18rem;
+        color: #223f33;
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        background: none;
+        border-radius: 12px;
+        padding: 0.45rem 1rem;
+        width: 100%;
+        text-align: left;
+        border: none;
+      }
+      nav ul li a:hover, nav ul li a:focus {
+        color: var(--gold);
+        background: #f8f6ef;
+      }
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1002;
+        background: rgba(245,245,220,0.85);
+        border: 1.5px solid #ddd;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      }
+      .hero {
+        margin: 6.5rem 1rem 3rem;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .btn {
+        margin: 0.5rem auto;
+        width: 90%;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        display: block;
+        padding: 1rem 0;
+      }
+      .btn-outline {
+        margin: 0.5rem auto;
+        width: 90%;
+      }
+      .committees-grid,
+      .core-members-cards {
+        grid-template-columns: 1fr;
+      }
+      .testimonial {
+        width: 100% !important;
+        position: relative !important;
+      }
+      .testimonial.active {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+      .schedule-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .schedule-time {
+        flex: none;
+        width: 100%;
+        font-weight: 700;
+        color: var(--gold);
+        border-bottom: 1px solid var(--olive-light);
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    /* --- END: Improved Mobile Nav, Blur, Popup --- */
+    @media (max-width: 480px) {
+      header.scrolled .logo-text,
+      .logo-text {
+        font-size: 1.3rem;
+      }
+      nav ul {
+        padding-top: 3rem;
+      }
+      .section {
+        padding: 3rem 1rem 5rem;
+      }
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      .about-text h3 {
+        font-size: 1.3rem;
+      }
+      .core-member-card {
+        padding: 1rem;
+      }
+      .core-member-card .name {
+        font-size: 1.1rem;
+      }
+      .core-member-card .title {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="src/Nashlogo.jpg" alt="NashCon Logo" />
+        <span class="logo-text">NASHCON</span>
+      </div>
+      <nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul id="navMenu" aria-label="Primary Navigation">
+          <li><a href="#home" tabindex="0"><img src="src/favicon.ico" style="width:22px;vertical-align:middle;margin-right:7px;" alt="🏠"/> Home</a></li>
+          <li><a href="#about" tabindex="0"><i class="fas fa-info-circle"></i> About</a></li>
+          <li><a href="#committees" tabindex="0"><i class="fas fa-users"></i> Committees</a></li>
+          <li><a href="#core-members" tabindex="0"><i class="fas fa-star"></i> Core Members</a></li>
+          <li><a href="#registration" tabindex="0"><i class="fas fa-edit"></i> Registration</a></li>
+          <li><a href="#contact" tabindex="0"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="hero" id="home" role="region" aria-label="NashCon Hero Section">
+    <div class="hero-content">
+      <h1>NASHCON 2025</h1>
+      <p>
+        The premier Model United Nations conference fostering diplomacy,
+        debate, and global awareness among youth.
+      </p>
+      <span class="date">July 26-27, 2025 | KK WAGH, NASHIK</span>
+      <div class="countdown-container" style="
+          margin: 2vh auto 4vh;
+          backdrop-filter: blur(90px);
+          border-radius: 20px;
+          padding: 1.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          max-width: 150%;
+          user-select: none;
+        ">
+        <h3 style="
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: clamp(16px, 2vw, 30px);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+          ">
+          <i class="fas fa-hourglass-half" style="color: #f82003"></i>
+          Event Begins In:
+        </h3>
+        <div id="countdown" style="
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 2vw, 24px);
+            font-weight: 800;
+          " aria-live="polite" aria-atomic="true">
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <div id="days" style="
+                font-size: clamp(24px, 5vw, 48px);
+                color: #f39c12;
+                font-family: 'Montserrat', sans-serif;
+                min-width: 2ch;
+                text-align: center;
+              " aria-label="Days">00</div>
+            <span style="
+                font-size: 0.8rem;
+                color: rgba(246, 243, 243, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              ">Days</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <div id="hours" style="
+                font-size: clamp(24px, 5vw, 48px);
+                color: #f39c12;
+                font-family: 'Montserrat', sans-serif;
+                min-width: 2ch;
+                text-align: center;
+              " aria-label="Hours">00</div>
+            <span style="
+                font-size: 0.8rem;
+                color: rgba(246, 243, 243, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              ">Hours</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <div id="minutes" style="
+                font-size: clamp(24px, 5vw, 48px);
+                color: #f39c12;
+                font-family: 'Montserrat', sans-serif;
+                min-width: 2ch;
+                text-align: center;
+              " aria-label="Minutes">00</div>
+            <span style="
+                font-size: 0.8rem;
+                color: rgba(246, 243, 243, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              ">Minutes</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <div id="seconds" style="
+                font-size: clamp(24px, 5vw, 48px);
+                color: #f39c12;
+                font-family: 'Montserrat', sans-serif;
+                min-width: 2ch;
+                text-align: center;
+              " aria-label="Seconds">00</div>
+            <span style="
+                font-size: 0.8rem;
+                color: rgba(246, 243, 243, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              ">Seconds</span>
+          </div>
+        </div>
+      </div>
+      <a href="#registration" class="btn" role="button">Register Now</a>
+      <a href="#about" class="btn btn-outline" role="button">Learn More</a>
+    </div>
+  </section>
+  <script>
+    // Countdown Timer (single source of truth, no flicker)
+    document.addEventListener('DOMContentLoaded', function () {
+      const countDownDate = new Date('2025-07-26T00:00:00').getTime();
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      const countdownContainer = document.getElementById('countdown');
+      function setCountdown(diff) {
+        if (diff < 0) {
+          countdownContainer.innerHTML = "<h3 style='color:#f39c12; margin:0;'>The Event Has Started!</h3>";
+          return true;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        if (daysEl.textContent !== String(days).padStart(2, '0')) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl.textContent !== String(hours).padStart(2, '0')) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl.textContent !== String(minutes).padStart(2, '0')) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl.textContent !== String(seconds).padStart(2, '0')) secondsEl.textContent = String(seconds).padStart(2, '0');
+        return false;
+      }
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        if (setCountdown(distance)) {
+          clearInterval(timer);
+        }
+      }
+      updateCountdown();
+      const timer = setInterval(updateCountdown, 1000);
+    });
+  </script>
+  <!-- About Section -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">About NASHCON</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Shaping Future Leaders Through Diplomacy...</h3>
+        <p>
+          NashCon Model United Nations is an annual, non-institutional
+          conference that engages participants in simulated United Nations committees. Our
+          mission is to educate participants about international relations,
+          current global issues, and the art of diplomacy.
+        </p>
+        <p>
+          Founded in 2025, NashCon is known for its innovative committee
+          designs, expert guest speakers, and commitment to fostering meaningful
+          debate.
+        </p>
+        <p>
+          This year's conference will feature a special Crisis Genesis Council and
+          opportunities to connect with students from diverse backgrounds who
+          share a passion for global affairs.
+        </p>
+      </div>
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2069&amp;q=80"
+          alt="MUN Conference" loading="lazy" />
+      </div>
+    </div>
+  </section>
+  <!-- Our Committees Section -->
+  <section class="section committees" id="committees" aria-labelledby="committees-title">
+    <h2 class="section-title" id="committees-title">Our Committees</h2>
+    <div class="committees-grid">
+      <article class="committee-card" role="region" aria-labelledby="cgc-title">
+        <div class="committee-image">
+          <img
+            src="src/CGC.png" loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="cgc-title">Crisis Genesis Council</h3>
+          <p>
+            A crisis committee is a decision-making body that has more power
+            than a traditional committee. Whilst General Assemblies recommend
+            and build consensus, focusing on creating and refining frameworks
+            for the nations involved to align their actions, crisis committees
+            take action.
+          </p>
+        </div>
+      </article>
+      <article class="committee-card" role="region" aria-labelledby="unodc-title">
+        <div class="committee-image">
+          <img
+            src="src/UNODC.png" loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="unodc-title">United Nations Office of Drugs and Crime</h3>
+          <p>
+            The United Nations Office on Drugs and Crime (UNODC) works to
+            address illicit drug trafficking, crime prevention, and
+            international terrorism through research, guidance, and
+            technical/financial assistance to governments.
+          </p>
+        </div>
+      </article>
+      <article class="committee-card" role="region" aria-labelledby="cw-title">
+        <div class="committee-image">
+          <img
+            src="src/CW.png" loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="cw-title">Cold War</h3>
+          <p>
+            Cold War, the open yet restricted rivalry that developed after
+            World War II between the United States and the Soviet Union and
+            their respective allies. The Cold War was waged on political,
+            economic, and propaganda fronts and had only limited recourse to
+            weapons.
+          </p>
+        </div>
+      </article>
+      <article class="committee-card" role="region" aria-labelledby="ip-title">
+        <div class="committee-image">
+          <img
+            src="src/IP.png" loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="ip-title">International Press </h3>
+          <p>
+            "IP" refers to the International Press, also known as the Press
+            Corps. This group simulates journalists and media representatives,
+            playing a crucial role in documenting and disseminating the
+            proceedings of the conference.
+          </p>
+        </div>
+      </article>
+      <article class="committee-card" role="region" aria-labelledby="cgc-title">
+        <div class="committee-image">
+          <img
+            src="src/UNW.png" loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="cgc-title">UN Women</h3>
+          <p>
+            UN Women is the United Nations entity dedicated to gender equality and the empowerment of women. A global champion for women and girls, UN Women was established to accelerate progress on meeting their needs worldwide.
+          </p>
+        </div>
+      </article>
+      <article class="committee-card" role="region" aria-labelledby="unodc-title">
+        <div class="committee-image">
+          <img
+            src="src/DISEC.png"loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="unodc-title">Disarmament and International Security Council</h3>
+          <p>
+            DISEC (Disarmament and International Security Committee) is the First Committee of the United Nations General Assembly. It deals with issues related to disarmament, non-proliferation of weapons, and international security. DISEC's focus includes global peace and stability, with a particular emphasis on threats to international security and the regulation of armaments. 
+          </p>
+        </div>
+      </article>
+      <article class="committee-card" role="region" aria-labelledby="cw-title">
+        <div class="committee-image">
+          <img
+            src="src/LS.png" loading="lazy" />
+        </div>
+        <div class="committee-content">
+          <h3 id="cw-title">Lok Sabha</h3>
+          <p>
+            The Lok Sabha is the lower house of the Indian Parliament, composed of representatives elected directly by the people. It has a maximum strength of 550 members, with 530 representing states and 20 representing union territories. The Parliament Digital Library provides access to various parliamentary documents, including debates, reports, and publications of the Lok Sabha. 
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- Core Members Section -->
+  <section class="core-members-section section" id="core-members" aria-labelledby="core-members-title">
+    <h2 class="section-title" id="core-members-title">
+      Core Members
+    </h2>
+    <div class="core-members-cards">
+      <!-- Member: Vihaan Choudhary -->
+      <article class="core-member-card" role="region" aria-label="Vihaan Choudhary">
+        <div class="profile">
+          <img src="src/Instagram.png" alt="Vihaan Choudhary" loading="lazy" />
+        </div>
+        <div class="main-content">
+          <h3 class="name">Vihaan Choudhary</h3>
+          <span class="title">Secretary General &amp; Founder</span>
+        </div>
+        <ul class="social" aria-label="Social media links for Vihaan Choudhary">
+          <li>
+            <a href="https://www.instagram.com/_vvihaann_/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="skills">
+          <h6>Expertise</h6>
+          <ul>
+            <li>Strategic Leadership</li>
+            <li>Public Speaking</li>
+            <li>Event Management</li>
+          </ul>
+        </div>
+      </article>
+      <!-- Member: Tanishka Kadam -->
+      <article class="core-member-card" role="region" aria-label="Tanishka Kadam">
+        <div class="profile">
+          <img src="src/Instagram2.png" alt="Tanishka Kadam" loading="lazy" />
+        </div>
+        <div class="main-content">
+          <h3 class="name">Tanishka Kadam</h3>
+          <span class="title">Director General</span>
+        </div>
+        <ul class="social" aria-label="Social media links for Tanishka Kadam">
+          <li>
+            <a href="https://www.instagram.com/tanishka.9066/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="skills">
+          <h6>Expertise</h6>
+          <ul>
+            <li>Innovation</li>
+            <li>Strategic Planning</li>
+            <li>Team Building</li>
+          </ul>
+        </div>
+      </article>
+      <!-- Member: Mahek Anand -->
+      <article class="core-member-card" role="region" aria-label="Mahek Anand">
+        <div class="profile">
+          <img src="src/Instagram5.png" alt="Mahek Anand" loading="lazy" />
+        </div>
+        <div class="main-content">
+          <h3 class="name">Mahek Anand</h3>
+          <span class="title">Chief Advisor</span>
+        </div>
+        <ul class="social" aria-label="Social media links for Mahek Anand">
+          <li>
+            <a href="https://www.instagram.com/mahek_anand/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="skills">
+          <h6>Expertise</h6>
+          <ul>
+            <li>Event Planning</li>
+            <li>Vendor Management</li>
+            <li>Budget Administration</li>
+          </ul>
+        </div>
+      </article>
+      <!-- Member: Shreyansh Joshi -->
+      <article class="core-member-card" role="region" aria-label="Shreyansh Joshi">
+        <div class="profile">
+          <img src="src/insta8.png" alt="Shreyansh Joshi" loading="lazy" />
+        </div>
+        <div class="main-content">
+          <h3 class="name">Shreyansh Joshi</h3>
+          <span class="title">Deputy Secretary General</span>
+        </div>
+        <ul class="social" aria-label="Social media links for Shreyansh Joshi">
+          <li>
+            <a href="https://www.instagram.com/shreyansh1101/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="skills">
+          <h6>Expertise</h6>
+          <ul>
+            <li>Event Planning</li>
+            <li>Vendor Management</li>
+            <li>Budget Administration</li>
+          </ul>
+        </div>
+      </article>
+      <!-- Member: Anugraha Matale -->
+      <article class="core-member-card" role="region" aria-label="Anugraha Matale">
+        <div class="profile">
+          <img src="src/Instagram3.png" alt="Anugraha Matale" loading="lazy" />
+        </div>
+        <div class="main-content">
+          <h3 class="name">Anugraha Matale</h3>
+          <span class="title">Charge D'Affaires</span>
+        </div>
+        <ul class="social" aria-label="Social media links for Anugraha Matale">
+          <li>
+            <a href="https://www.instagram.com/anugrah_matale/ " title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="skills">
+          <h6>Expertise</h6>
+          <ul>
+            <li>Digital Marketing</li>
+            <li>Brand Strategy</li>
+            <li>Social Media</li>
+          </ul>
+        </div>
+      </article>
+      <!-- Member: Yash Sonawane -->
+      <article class="core-member-card" role="region" aria-label="Yash Sonawane">
+        <div class="profile">
+          <img src="src/Instagram4.png" alt="Yash Sonawane" loading="lazy" />
+        </div>
+        <div class="main-content">
+          <h3 class="name">Yash Sonawane</h3>
+          <span class="title">Chief Advisor</span>
+        </div>
+        <ul class="social" aria-label="Social media links for Yash Sonawane">
+          <li>
+            <a href="https://www.instagram.com/yash_sonawane14/" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="skills">
+          <h6>Expertise</h6>
+          <ul>
+            <li>Event Planning</li>
+            <li>Vendor Management</li>
+            <li>Budget Administration</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- Registration Section -->
+  <section class="registration section" id="registration" aria-labelledby="registration-title">
+    <h2 class="section-title" id="registration-title">Registration</h2>
+    <div class="registration-container">
+      <div class="registration-image">
+        <img src="https://unu.edu/sites/default/files/styles/content_width/public/2024-08/36396494843_ce7802bb44_o.webp?itok=WluLsC7B" alt="Conference Registration" loading="lazy" />
+      </div>
+      <div class="registration-button">
+        <p>Ready to join us? Click the button below to get started!</p>
+        <a href="Payment.html" class="btn" target="_blank" role="button">Click here to get started</a>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <h2 class="section-title" id="contact-title">Contact Us</h2>
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Address</h4>
+            <p>
+              K K Wagh Arts, Science ,Commerce Senior College
+            </p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:thenashcon@gmail.com">thenashcon@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h4>Phone</h4>
+            <p>
+              <a href="tel:+919322759166">(+91) 93227 59166</a><br>
+              <a href="tel:+918698902626">(+91) 86989 02626</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.instagram.com/nash.con/#" class="social-link" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://in.linkedin.com/company/thenashcon?trk=public_profile_topcard-current-company"
+          class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1874.4376516822376!2d73.82016389505844!3d20.013747587867122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddebab15555555%3A0xdb01367e9d5cf969!2sK.K%20Wagh%20Institute%20Of%20Engineering%20Education%20and%20Research!5e0!3m2!1sen!2sin!4v1746360247722!5m2!1sen!2sin"
+        width="600" height="450" style="border:0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="K.K Wagh Institute Location"></iframe>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>About NashCon</h3>
+        <p>
+          NashCon Model United Nations is a premier academic conference that brings
+          together students from across the region to engage in diplomacy, debate,
+          and international affairs.
+        </p>
+        <p>
+          Founded in 2025, we are committed to fostering global awareness and
+          leadership skills in young people.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#committees">Committees</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Delegate Handbook</a></li>
+          <li><a href="#">Position Paper Guide</a></li>
+          <li><a href="#">Rules of Procedure</a></li>
+          <li><a href="#">Country Matrix</a></li>
+          <li><a href="#">Faculty Resources</a></li>
+          <li><a href="#">Photo Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter for conference updates, deadlines, and MUN resources.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Your email address" aria-label="Email for newsletter subscription" />
+          <button class="btn" type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NashCon Model United Nations. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+          href="#">Terms of Service</a></p>
+      <br />
+      <p>Designed &amp; Developed by:<br />Archit Thorat &amp; Purab Patil <br>@PSG™</p>
+    </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+  <script>
+    // Mobile Menu Toggle with Blur
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      document.body.classList.toggle('menu-open', navMenu.classList.contains('active'));
+      mobileMenuBtn.innerHTML = navMenu.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+    // Close on link click
+    document.querySelectorAll('#navMenu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+    // Close when clicking blur background
+    document.addEventListener('click', function (e) {
+      if (
+        document.body.classList.contains('menu-open') &&
+        !navMenu.contains(e.target) &&
+        e.target !== mobileMenuBtn &&
+        !mobileMenuBtn.contains(e.target)
+      ) {
+        navMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    }, true);
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+    // Schedule tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+          b.setAttribute('tabindex', '-1');
+        });
+        document.querySelectorAll('.tab-content').forEach((c) => {
+          c.classList.remove('active');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        btn.setAttribute('tabindex', '0');
+        document.getElementById(btn.getAttribute('data-day')).classList.add('active');
+      });
+    });
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+    // Payment method selection
+    const paymentMethods = document.querySelectorAll('.payment-method');
+    paymentMethods.forEach((method) => {
+      method.addEventListener('click', () => {
+        paymentMethods.forEach((m) => {
+          m.classList.remove('active');
+          m.setAttribute('aria-checked', 'false');
+          m.setAttribute('tabindex', '-1');
+        });
+        method.classList.add('active');
+        method.setAttribute('aria-checked', 'true');
+        method.setAttribute('tabindex', '0');
+      });
+    });
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll(
+        '.about-text, .about-image, .committee-card, .schedule-item, .registration-image, .registration-form, .contact-info, .contact-map, .faq-item'
+      );
+      elements.forEach((element) => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if (elementPosition < screenPosition) {
+          element.classList.add('animated');
+        }
+      });
+    };
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+    // Form submission
+    const registrationForm = document.getElementById('munRegistrationForm');
+    if (registrationForm) {
+      registrationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Registration submitted successfully! We will contact you with further details.');
+        registrationForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
