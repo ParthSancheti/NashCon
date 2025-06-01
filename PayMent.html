@@ -225,6 +225,7 @@ select {
 }
 input[type="text"]:focus,
 input[type="tel"]:focus,
+input[type="email"]:focus,
 textarea:focus,
 select:focus {
   box-shadow: 0 0 8px #CBB18E;
@@ -661,7 +662,7 @@ label {
     <section id="participant-section" aria-label="Participant Details Form">
       <form id="participant-form" enctype="multipart/form-data" novalidate>
   <div style="margin-bottom:20px;">
-    <label for="planSelect" style="font-weight:700; font-size:1.1rem; color:#00BFFF;">Selected Plan</label>
+    <label for="planSelect" style="font-weight:700; font-size:1.1rem; color:#CBB18E;">Selected Plan</label>
     <input type="text" id="planSelect" name="planSelect" disabled style="background:#ddd; border:none; border-radius:8px; padding:10px 15px; font-size:1rem; color:#333; width:100%;"/>
   </div>
   <div class="row-inputs">
@@ -675,16 +676,8 @@ label {
     </div>
   </div>
     <!-- Country Ambasiter field -->
-  <div>
-    <label for="oc">Campus Ambassdor/ OC referral</label>
-    <input
-      id="oc"
-      name="country_ambasiter"
-      type="text"
-      placeholder="Campus Ambassdor/ OC referral"
-      required
-    />
-  </div>
+<input id="oc" name="campus_ambassador_oc_referral" type="text" placeholder="Campus Ambassador / OC Referral" required />
+
 
   <div style="flex:1;">
     <label for="email">Email Address</label>
@@ -721,22 +714,57 @@ label {
       </select>
     </div>
   </div>
-  <div>
-    <label for="committeePreferenceDropdown">Committee Preference (max 3)</label>
-    <div class="dropdown-container" id="committeeDropdown" aria-haspopup="listbox" aria-expanded="false" tabindex="0" role="combobox" aria-labelledby="committeeLabel">
-      <div class="dropdown-header" id="committeeLabel" aria-live="polite" aria-relevant="additions removals" aria-atomic="true" aria-controls="committeeList">Select up to 3 committees</div>
-      <div class="dropdown-list" id="committeeList" role="listbox" aria-multiselectable="true" aria-label="Committee preferences" tabindex="-1">
-        <label><input type="checkbox" name="committees" value="CRISIS GENESIS COUNCIL" />CRISIS GENESIS COUNCIL</label>
-        <label><input type="checkbox" name="committees" value="UNITED NATIONS OFFICE OF DRUGS AND CRIME" />UNITED NATIONS OFFICE OF DRUGS AND CRIME</label>
-        <label><input type="checkbox" name="committees" value="COLD WAR" />COLD WAR</label>
-        <label><input type="checkbox" name="committees" value="UNITED NATIONS WOMENS" />UNITED NATIONS WOMENS</label>
-        <label><input type="checkbox" name="committees" value="LOK SABHA" />LOK SABHA</label>
-        <label><input type="checkbox" name="committees" value="INTERNATIONAL PRESS" />INTERNATIONAL PRESS</label>
-        <label><input type="checkbox" name="committees" value="DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL" />DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL</label>
-        <label><input type="checkbox" name="committees" value="No Preference" />No Preference</label>
-      </div>
-    </div>
+<!-- Committee Preferences Section -->
+<div>
+  <label style="color:#CBB18E; font-weight:700; font-size:1.1rem;">Committee Preferences (Max 3)</label>
+
+  <div class="preference-selector">
+    <label for="committeePreference1" style="color:#CBB18E;">1st Preference (Highest Priority)</label>
+    <select id="committeePreference1" name="committee_1" required>
+      <option value="" disabled selected>Select 1st Preference</option>
+      <option value="CRISIS GENESIS COUNCIL">CRISIS GENESIS COUNCIL</option>
+      <option value="UNITED NATIONS OFFICE OF DRUGS AND CRIME">UNITED NATIONS OFFICE OF DRUGS AND CRIME</option>
+      <option value="COLD WAR">COLD WAR</option>
+      <option value="UNITED NATIONS WOMENS">UNITED NATIONS WOMENS</option>
+      <option value="LOK SABHA">LOK SABHA</option>
+      <option value="INTERNATIONAL PRESS">INTERNATIONAL PRESS</option>
+      <option value="DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL">DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL</option>
+      <option value="No Preference">No Preference</option>
+    </select>
   </div>
+
+  <div class="preference-selector">
+    <label for="committeePreference2" style="color:#CBB18E;">2nd Preference</label>
+    <select id="committeePreference2" name="committee_2" required>
+      <option value="" disabled selected>Select 2nd Preference</option>
+      <option value="CRISIS GENESIS COUNCIL">CRISIS GENESIS COUNCIL</option>
+      <option value="UNITED NATIONS OFFICE OF DRUGS AND CRIME">UNITED NATIONS OFFICE OF DRUGS AND CRIME</option>
+      <option value="COLD WAR">COLD WAR</option>
+      <option value="UNITED NATIONS WOMENS">UNITED NATIONS WOMENS</option>
+      <option value="LOK SABHA">LOK SABHA</option>
+      <option value="INTERNATIONAL PRESS">INTERNATIONAL PRESS</option>
+      <option value="DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL">DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL</option>
+      <option value="No Preference">No Preference</option>
+    </select>
+  </div>
+
+  <div class="preference-selector">
+    <label for="committeePreference3" style="color:#CBB18E;">3rd Preference (Lowest Priority)</label>
+    <select id="committeePreference3" name="committee_3" required>
+      <option value="" disabled selected>Select 3rd Preference</option>
+      <option value="CRISIS GENESIS COUNCIL">CRISIS GENESIS COUNCIL</option>
+      <option value="UNITED NATIONS OFFICE OF DRUGS AND CRIME">UNITED NATIONS OFFICE OF DRUGS AND CRIME</option>
+      <option value="COLD WAR">COLD WAR</option>
+      <option value="UNITED NATIONS WOMENS">UNITED NATIONS WOMENS</option>
+      <option value="LOK SABHA">LOK SABHA</option>
+      <option value="INTERNATIONAL PRESS">INTERNATIONAL PRESS</option>
+      <option value="DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL">DISARMAMENT AND INTERNATIONAL SECURITY COUNCIL</option>
+      <option value="No Preference">No Preference</option>
+    </select>
+  </div>
+</div>
+
+
   <div>
     <label for="countryPreference">Country Preference</label>
     <textarea id="countryPreference" name="country_preference" rows="3" placeholder="Country Preference"></textarea>
@@ -796,51 +824,49 @@ label {
 <script>
 (() => {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbzSxiUEzgTVIEgRGINRtRxBSOCIJHE5NdMuIH0BjryoyEhj9fZi3-IN4_CRtiti3_XSCA/exec';
-let plans = {};
-const plansURL = 'https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/config.json';
+  const plansURL = 'https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/config.json';
 
-// Fetch plans from GitHub and update price fields in the table
-fetch(plansURL)
-  .then(response => response.json())
-  .then(data => {
-    plans = data;
-    // Update the prices in the comparison table
-    if (document.getElementById('price-with-socials')) {
-      document.getElementById('price-with-socials').textContent = plans['With MUN + Socials'].price;
-    }
-    if (document.getElementById('price-mun-only')) {
-      document.getElementById('price-mun-only').textContent = plans['MUN Only'].price;
-    }
-    // (Optionally initialize other UI logic here)
-  })
-  .catch(error => {
-    console.error('Failed to fetch plans.json:', error);
-    Swal.fire('Error', 'Could not load plan prices or QR codes.', 'error');
-  });
-  // DOM references
-  const planContinueButtons = document.querySelectorAll('.btn-plan-continue');
-  const participantSection     = document.getElementById('participant-section');
-  const checkoutModal          = document.getElementById('checkout-modal');
-  const qrCodeImage            = document.getElementById('qrCode');
-  const phonePeBtn             = document.getElementById('phonePeButton');
-  const cashBtn                = document.getElementById('cashButton');
+  let plans = {};
+
+  // Fetch plans from GitHub and update prices
+  fetch(plansURL)
+    .then(r => r.json())
+    .then(data => {
+      plans = data;
+      const withSocials = document.getElementById('price-with-socials');
+      const munOnly = document.getElementById('price-mun-only');
+      if (withSocials) withSocials.textContent = plans["With MUN + Socials"].price;
+      if (munOnly) munOnly.textContent = plans["MUN Only"].price;
+    })
+    .catch(err => {
+      console.error('Price fetch failed:', err);
+      Swal.fire('Error', 'Could not load plan pricing.', 'error');
+    });
+
+  // DOM Elements
+  const form = document.getElementById('participant-form');
+  const planButtons = document.querySelectorAll('.btn-plan-continue');
+  const participantSection = document.getElementById('participant-section');
+  const planSelectInput = document.getElementById('planSelect');
+  const continueBtn = document.getElementById('continueBtn');
+  const checkoutModal = document.getElementById('checkout-modal');
+  const qrCodeImage = document.getElementById('qrCode');
+  const phonePeBtn = document.getElementById('phonePeButton');
+  const cashBtn = document.getElementById('cashButton');
+  const submitBtn = document.getElementById('submitBtn');
+  const confirmationPopup = document.getElementById('confirmationPopup');
+  const closeConfirmationBtn = document.getElementById('closeConfirmationBtn');
+  const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
   const paymentScreenshotInput = document.getElementById('paymentScreenshot');
-  const submitBtn              = document.getElementById('submitBtn');
-  const continueBtn            = document.getElementById('continueBtn');
-  const confirmationPopup      = document.getElementById('confirmationPopup');
-  const closeConfirmationBtn   = document.getElementById('closeConfirmationBtn');
-  const closeCheckoutBtn       = document.getElementById('closeCheckoutBtn');
-  const form                   = document.getElementById('participant-form');
-  const committeeDropdown      = document.getElementById('committeeDropdown');
-  const dropdownHeader         = committeeDropdown.querySelector('.dropdown-header');
-  const dropdownList           = committeeDropdown.querySelector('.dropdown-list');
-  const committeeCheckboxes    = dropdownList.querySelectorAll('input[type="checkbox"]');
-  const planSelectInput        = document.getElementById('planSelect');
+
+  const pref1 = document.getElementById('committeePreference1');
+  const pref2 = document.getElementById('committeePreference2');
+  const pref3 = document.getElementById('committeePreference3');
 
   let selectedPlan = null;
 
-  // 1. Plan selection → show form
-  planContinueButtons.forEach(btn => {
+  // Plan selection logic
+  planButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       selectedPlan = btn.dataset.plan;
       planSelectInput.value = selectedPlan;
@@ -852,185 +878,151 @@ fetch(plansURL)
     });
   });
 
-  // 2. Custom dropdown
-  dropdownHeader.addEventListener('click', () => {
-    const expanded = committeeDropdown.getAttribute('aria-expanded') === 'true';
-    committeeDropdown.setAttribute('aria-expanded', !expanded);
-    dropdownHeader.classList.toggle('open', !expanded);
-    dropdownList.classList.toggle('open', !expanded);
-  });
+  // Update committee dropdowns to prevent duplicate selections
+  function updatePreferences() {
+    const val1 = pref1.value;
+    const val2 = pref2.value;
+    const val3 = pref3.value;
 
-  document.addEventListener('click', e => {
-    if (!committeeDropdown.contains(e.target)) {
-      committeeDropdown.setAttribute('aria-expanded', false);
-      dropdownHeader.classList.remove('open');
-      dropdownList.classList.remove('open');
-    }
-  });
+    const selects = [pref1, pref2, pref3];
+    const values = [val1, val2, val3];
 
-  committeeCheckboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      const checked = [...committeeCheckboxes].filter(c => c.checked);
-      if (checked.length > 3) {
-        cb.checked = false;
-        Swal.fire('Oops', 'Max 3 committees.', 'warning');
-        return;
-      }
-      updateDropdownHeader();
+    selects.forEach((select, i) => {
+      const others = values.filter((v, idx) => idx !== i);
+      Array.from(select.options).forEach(opt => {
+        if (!opt.value || opt.value === values[i]) {
+          opt.hidden = false;
+        } else {
+          opt.hidden = others.includes(opt.value);
+        }
+      });
     });
+  }
+
+  [pref1, pref2, pref3].forEach(select => {
+    select.addEventListener('change', updatePreferences);
   });
 
-  function updateDropdownHeader() {
-    const selected = [...committeeCheckboxes].filter(c => c.checked).map(c => c.value);
-    dropdownHeader.textContent = selected.length
-      ? selected.join(', ')
-      : 'Select up to 3 committees';
-  }
-  updateDropdownHeader();
+  updatePreferences();
 
-  // 3. Continue → show payment modal
+  // Continue to payment
   continueBtn.addEventListener('click', () => {
     if (!form.reportValidity()) return;
-    const chosen = [...committeeCheckboxes].filter(c => c.checked);
-    if (!chosen.length) {
-      Swal.fire('Oops', 'Select at least one committee.', 'warning');
+
+    if (new Set([pref1.value, pref2.value, pref3.value]).size < 3) {
+      Swal.fire('Oops', 'All 3 committee preferences must be unique.', 'warning');
       return;
     }
+
     if (!selectedPlan || !plans[selectedPlan]) {
-      Swal.fire('Error', 'Invalid plan.', 'error');
+      Swal.fire('Error', 'Invalid plan selected.', 'error');
       return;
     }
-    // Populate QR & link
+
     qrCodeImage.src = plans[selectedPlan].qr;
     qrCodeImage.alt = `QR code for ${selectedPlan}`;
     phonePeBtn.onclick = () => window.open(plans[selectedPlan].phonePeLink, '_blank');
-
     checkoutModal.style.display = 'flex';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // 4. Close checkout modal
+  // Close checkout modal
   closeCheckoutBtn.addEventListener('click', () => {
     checkoutModal.style.display = 'none';
     paymentScreenshotInput.value = '';
     document.getElementById('file-name').textContent = 'No file chosen';
   });
 
-  // 5. Screenshot validation
+  // Payment screenshot validation
   paymentScreenshotInput.addEventListener('change', () => {
     const file = paymentScreenshotInput.files[0];
     const name = file ? file.name : 'No file chosen';
     document.getElementById('file-name').textContent = name;
     if (file) {
-      if (!['image/png','image/jpeg'].includes(file.type)) {
-        Swal.fire('Error','Use PNG or JPEG.','error');
+      if (!['image/png', 'image/jpeg'].includes(file.type)) {
+        Swal.fire('Error', 'Use PNG or JPEG.', 'error');
         paymentScreenshotInput.value = '';
         document.getElementById('file-name').textContent = 'No file chosen';
-      } else if (file.size > 1 * 1024 * 1024) {
-        Swal.fire('Error','File must be < 1MB.','error');
+      } else if (file.size > 1024 * 1024) {
+        Swal.fire('Error', 'File must be < 1MB.', 'error');
         paymentScreenshotInput.value = '';
         document.getElementById('file-name').textContent = 'No file chosen';
       }
     }
   });
 
-  // 6. Cash-payment flow with “Submitting…” animation
+  // Cash payment
   cashBtn.addEventListener('click', () => {
-    cashBtn.disabled = true;
-    const originalText = cashBtn.textContent;
-    cashBtn.textContent = 'Submitting…';
-
     if (!form.reportValidity()) {
-      Swal.fire('Oops','Fill all fields.','warning');
-      cashBtn.disabled = false;
-      cashBtn.textContent = originalText;
+      Swal.fire('Oops', 'Please complete all fields.', 'warning');
       return;
     }
 
     const fd = new FormData(form);
     fd.append('plan_select', selectedPlan);
-    const selectedCommittees = [...committeeCheckboxes].filter(c => c.checked).map(c => c.value);
-    fd.append('committee_1', selectedCommittees[0]||'');
-    fd.append('committee_2', selectedCommittees[1]||'');
-    fd.append('committee_3', selectedCommittees[2]||'');
-    fd.append('payment_screenshot', '');  // no file for cash
+    fd.append('committee_1', pref1.value);
+    fd.append('committee_2', pref2.value);
+    fd.append('committee_3', pref3.value);
+    fd.append('payment_screenshot', '');
 
     fetch(scriptURL, { method: 'POST', body: fd })
       .then(res => res.json())
       .then(data => {
         if (data.result === 'success') {
-          Swal.fire('Success','Marked as Cash Payment!','success');
-          checkoutModal.style.display = 'none';
-          confirmationPopup.style.display = 'flex';
+          Swal.fire('Success', 'Cash payment recorded!', 'success');
           form.reset();
-          updateDropdownHeader();
-          document.getElementById('file-name').textContent = 'No file chosen';
+          updatePreferences();
+          confirmationPopup.style.display = 'flex';
+          checkoutModal.style.display = 'none';
         } else {
           Swal.fire('Error', data.error, 'error');
         }
       })
-      .catch(err => Swal.fire('Error', `Failed: ${err.message}`, 'error'))
-      .finally(() => {
-        cashBtn.disabled = false;
-        cashBtn.textContent = originalText;
-      });
+      .catch(err => Swal.fire('Error', err.message, 'error'));
   });
 
-  // 7. Submit with screenshot
+  // Online payment
   submitBtn.addEventListener('click', () => {
     const file = paymentScreenshotInput.files[0];
     if (!file) {
-      Swal.fire('Oops','Attach screenshot.','warning');
+      Swal.fire('Oops', 'Attach a screenshot.', 'warning');
       return;
     }
     if (!form.reportValidity()) {
-      Swal.fire('Oops','Fill all fields.','warning');
+      Swal.fire('Oops', 'Please complete all fields.', 'warning');
       return;
     }
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting…';
-
     const reader = new FileReader();
-    reader.onload = e => {
+    reader.onload = () => {
       const fd = new FormData(form);
       fd.append('plan_select', selectedPlan);
-      const selectedCommittees = [...committeeCheckboxes].filter(c => c.checked).map(c => c.value);
-      fd.append('committee_1', selectedCommittees[0]||'');
-      fd.append('committee_2', selectedCommittees[1]||'');
-      fd.append('committee_3', selectedCommittees[2]||'');
-      fd.append('payment_screenshot', e.target.result);
+      fd.append('committee_1', pref1.value);
+      fd.append('committee_2', pref2.value);
+      fd.append('committee_3', pref3.value);
+      fd.append('payment_screenshot', reader.result);
 
       fetch(scriptURL, { method: 'POST', body: fd })
         .then(res => res.json())
         .then(data => {
           if (data.result === 'success') {
-            Swal.fire('Success','Submitted!','success');
-            checkoutModal.style.display = 'none';
-            confirmationPopup.style.display = 'flex';
+            Swal.fire('Success', 'Payment submitted!', 'success');
             form.reset();
-            updateDropdownHeader();
-            document.getElementById('file-name').textContent = 'No file chosen';
+            updatePreferences();
+            confirmationPopup.style.display = 'flex';
+            checkoutModal.style.display = 'none';
           } else {
             Swal.fire('Error', data.error, 'error');
           }
         })
-        .catch(err => Swal.fire('Error', `Failed: ${err.message}`, 'error'))
-        .finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit';
-        });
+        .catch(err => Swal.fire('Error', err.message, 'error'));
     };
     reader.readAsDataURL(file);
   });
 
-  // 8. Close confirmation & reset everything
+  // Close confirmation
   closeConfirmationBtn.addEventListener('click', () => {
     confirmationPopup.style.display = 'none';
-    form.reset();
-    updateDropdownHeader();
-    paymentScreenshotInput.value = '';
-    document.getElementById('file-name').textContent = 'No file chosen';
     participantSection.style.display = 'none';
     document.querySelector('.table-container').style.display = 'block';
     document.querySelector('h1').style.display = 'block';
@@ -1039,6 +1031,7 @@ fetch(plansURL)
 
 })();
 </script>
+
 
 </body>
 </html>
