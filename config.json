@@ -1,11 +1,11 @@
 {
   "With MUN + Socials": {
-    "price": "₹ 2,950",
+    "price": "₹ 3,000",
     "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
     "phonePeLink": "https://merchant.phonepe.com/merchant/with_mun_socials_payment"
   },
   "MUN Only": {
-    "price": "₹ 2,150",
+    "price": "₹ 2,200",
     "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
     "phonePeLink": "https://merchant.phonepe.com/merchant/mun_only_payment"
   }
