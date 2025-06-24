@@ -1,9 +1,12 @@
 <html>
 <head>
-  <meta name="title" content="Best MUN 2025 | NashCon MUN 2025">
-  <meta name="description" content="Join the Best MUN 2025 conference at NashCon MUN 2025. Experience top-notch debate, diplomacy, and networking opportunities.">
+  <meta name="title" content="NashCon 2025 | NashCon MUN 2025">
+  <meta name="description" content="Join the NashCon 2025 conference at NashCon MUN 2025. Experience top-notch debate, diplomacy, and networking opportunities.">
   <meta name="author-info" content="@PSG™">
   <meta charset="UTF-8" />
+  <meta name="author" content="Parth Sancheti">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a3c34" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NashCon MUN - Model United Nations Conference</title>
   <!-- Favicon -->
@@ -13,6 +16,72 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Raleway:wght@300;400;600&amp;display=swap"
     rel="stylesheet" />
   <style>
+        .tooltip-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-trigger {
+      color: var(--gold);
+      font-weight: bold;
+      text-decoration: underline dotted;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .tooltip-content {
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff7ed;
+      border: 2px solid var(--olive-light);
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      padding: 1rem;
+      min-width: 220px;
+      max-width: 280px;
+      text-align: center;
+      display: none;
+      z-index: 9999;
+    }
+
+    .tooltip-wrapper:hover .tooltip-content {
+      display: block;
+    }
+
+    .tooltip-content img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .tooltip-content h3 {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+      color: var(--olive-dark);
+    }
+
+    .tooltip-content .social-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .tooltip-content .social-icons a {
+      font-size: 1.4rem;
+      color: #333;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .tooltip-content .social-icons a:hover {
+      transform: scale(1.2);
+      color: var(--gold);
+    }
+
     :root {
       --olive: #6b8e23;
       --olive-dark: #556b2f;
@@ -140,7 +209,7 @@
       transition: background-color 0.3s ease;
     }
     .mobile-menu-btn:hover {
-      background: var(--olive-light);
+      background: transparent;
     }
     /* Hero Section */
     .hero {
@@ -313,9 +382,10 @@
     }
     .committee-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(243, 156, 18, 0.8);
-      border-color: var(--gold);
+      box-shadow: 0 15px 40px rgba(34, 139, 131, 0.5); /* Teal glow */
+      border-color: #228b83; /* Deep teal border */
     }
+
     .committee-image {
       height: 230px;
       overflow: hidden;
@@ -1080,10 +1150,11 @@
       .mobile-menu-btn {
         display: block;
         z-index: 1002;
-        background: rgba(245,245,220,0.85);
-        border: 1.5px solid #ddd;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+        background: transparent;
+        border: none;
+        box-shadow: none;
       }
+
       .hero {
         margin: 6.5rem 1rem 3rem;
       }
@@ -1140,7 +1211,9 @@
         padding-top: 3rem;
       }
       .section {
-        padding: 3rem 1rem 5rem;
+        padding: 2.5rem 1.2rem 4rem;
+        margin-left: 7px;
+        margin-right: 7px;
       }
       .section-title h2 {
         font-size: 1.6rem;
@@ -1157,6 +1230,7 @@
       .core-member-card .title {
         font-size: 0.85rem;
       }
+      
     }
   </style>
 </head>
@@ -1598,7 +1672,7 @@
       </div>
       <div class="registration-button">
         <p>Ready to join us? Click the button below to get started!</p>
-        <a href="PayMent.html" class="btn" target="_blank" role="button">Click here to get started</a>
+        <a href="Payment.html" class="btn" target="_blank" role="button">Click here to get started</a>
       </div>
     </div>
   </section>
@@ -1621,9 +1695,8 @@
           <i class="fas fa-envelope"></i>
           <div>
             <h4>Email</h4>
-            <p>
-              thenashcon@gmail.com
-            </p>
+            <p><a href="mailto:thenashcon@gmail.com">thenashcon@gmail.com</a></p>
+
           </div>
         </div>
         <div class="contact-detail">
@@ -1631,7 +1704,9 @@
           <div>
             <h4>Phone</h4>
             <p>
-              +91 9921301084 (Abhishek- USG Delegate Affairs)<br> +91 9322759166( Vihaan-Secretary General)<br> +91 8698902626 (Tanishka-Director General)
+              <a href="tel:+919921301084">+91 9921301084</a> (Abhishek - USG Delegate Affairs)<br>
+              <a href="tel:+919322759166">+91 9322759166</a> (Vihaan - Secretary General)<br>
+              <a href="tel:+918698902626">+91 8698902626</a> (Tanishka - Director General)
             </p>
           </div>
         </div>
@@ -1700,14 +1775,31 @@
       <p>&copy; 2025 NashCon Model United Nations. All rights reserved. | <a href="#">Privacy Policy</a> | <a
           href="#">Terms of Service</a></p>
       <br />
-      <p>Designed &amp; Developed by:<br />Archit Thorat &amp; Purab Patil <br>@PSG™</p>
+      <p>Designed & Developed by:<br /></p>
+      <span class="tooltip-wrapper">
+  <a href="https://github.com/Parth-Sancheti-5" class="tooltip-trigger">Parth Sancheti</a>
+  <div class="tooltip-content">
+    <img src="https://avatars.githubusercontent.com/u/186968427?v=4" alt="Creator Image">
+    <h3>Parth Sancheti</h3>
+    <div class="social-icons">
+      <a href="https://github.com/Parth-Sancheti-5" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/parth_sancheti" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</span>
+
+
     </div>
   </footer>
   <!-- Back to Top Button -->
-  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
+
   <script>
+  document.getElementById('psgPopupBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('psgPopup').style.display = 'block';
+  });
+
+
     // Mobile Menu Toggle with Blur
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');

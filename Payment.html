@@ -198,9 +198,10 @@ form#participant-form {
   flex: 1;
 }
 select option {
-    background-color: #333;
+    background: rgba(33, 63, 51, 0.95); /* dark blur for dropdown list */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     color: #FFFFFF;
-    backdrop-filter: blur(8px);
   }
 
 /* Fields styling */
@@ -210,15 +211,17 @@ input[type="email"],
 textarea,
 select {
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(8px);
   border: none;
   border-radius: 12px;
-  padding: 10px 15px;
+  padding: 17px 15px;
   font-size: 1rem;
   backdrop-filter: blur(6px);
   color: #FFFFFF;
   font-weight: 600;
   outline-offset: 2px;
   outline-color: transparent;
+  line-height: 1.4;
   font-family: inherit;
   transition: box-shadow 0.25s ease;
   box-sizing: border-box;
@@ -532,7 +535,7 @@ label {
   display: none;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 150px;        /* moved from padding-bottom */
+  padding-bottom: 170px;        /* moved from padding-bottom */
   z-index: 11000;
   user-select: none;
   overflow-y: auto;
@@ -605,6 +608,33 @@ label {
     flex-direction: column;
   }
 }
+.preference-selector {
+  margin-bottom: 20px; /* spacing between committee boxes */
+}
+
+.preference-selector select {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: none;
+  border-radius: 12px;
+  padding: 18px 15px;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  width: 100%;
+  box-shadow: inset 0 0 5px rgba(33, 63, 51, 0.5);
+  appearance: none;
+  min-height: 56px;
+  line-height: 1.4;
+}
+
+.preference-selector select option {
+  background: rgba(33, 63, 51, 0.95);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+}
+
 </style>
 
 
@@ -963,7 +993,7 @@ label {
 
   cashBtn.disabled = true;
   checkoutModal.innerHTML = `
-    <div style="width:100%;height:100vh;display:flex;justify-content:center;align-items:flex-end;padding-bottom:150px;">
+    <div style="width:100%;height:100vh;display:flex;justify-content:center;align-items:flex-end;padding-bottom:170px;">
       <img src="src/sub_loader.gif" alt="Submitting..." style="height:40vh;">
     </div>`;
 
@@ -1003,7 +1033,7 @@ label {
 
   submitBtn.disabled = true;
   checkoutModal.innerHTML = `
-    <div style="width:100%;height:100vh;display:flex;justify-content:center;align-items:flex-end;padding-bottom:150px;">
+    <div style="width:100%;height:100vh;display:flex;justify-content:center;align-items:flex-end;padding-bottom:170px;">
       <img src="src/sub_loader.gif" alt="Submitting..." style="height:40vh;">
     </div>`;
 
