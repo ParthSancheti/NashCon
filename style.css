@@ -24,6 +24,25 @@ body {
   line-height: 1.6;
 }
 
+.logo {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.logo img {
+  height: 50px;
+  border-radius: 12px;
+}
+
 h1,
 h2,
 h3,
@@ -206,13 +225,13 @@ nav a:hover {
 
 .countdown-container {
   margin: 2vh auto 4vh;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.08); /* slight white */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 20px;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   max-width: 150%;
   user-select: none;
 }
