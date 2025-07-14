@@ -109,6 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.querySelectorAll('section, .committee-card, .core-member-card, .hero-content').forEach(el => {
+  el.classList.add('fade-in-up');
+});
+
   // FAQ accordion (No FAQ section in the provided HTML, but keeping the JS for future use)
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach((item) => {
