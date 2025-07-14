@@ -1,12 +1,14 @@
-{
-  "With MUN + Socials": {
-    "price": "₹ 3,350",
-    "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
-    "phonePeLink": "https://merchant.phonepe.com/merchant/with_mun_socials_payment"
-  },
-  "MUN Only": {
-    "price": "₹ 2,350",
-    "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
-    "phonePeLink": "https://merchant.phonepe.com/merchant/mun_only_payment"
-  }
-}
+    {
+      "registrationStatus": "on", // or "off"
+      "With MUN + Socials": {
+        "price": "₹ 3,350",
+        "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
+        "phonePeLink": "https://merchant.phonepe.com/merchant/with_mun_socials_payment"
+      },
+      "MUN Only": {
+        "price": "₹ 2,350",
+        "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
+        "phonePeLink": "https://merchant.phonepe.com/merchant/mun_only_payment"
+      }
+    }
+    
