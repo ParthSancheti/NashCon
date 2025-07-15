@@ -3,12 +3,12 @@
       "With MUN + Socials": {
         "price": "₹ 3,350",
         "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
-        "phonePeLink": "https://merchant.phonepe.com/merchant/with_mun_socials_payment"
+        "phonePeLink": "upi://pay?pa=9322759166-2@axl&pn=CHOUDHARY%20VIHAAN%20SONAL&am=3350&cu=INR"
       },
       "MUN Only": {
         "price": "₹ 2,350",
         "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
-        "phonePeLink": "https://merchant.phonepe.com/merchant/mun_only_payment"
+        "phonePeLink": "upi://pay?pa=9322759166-2@axl&pn=CHOUDHARY%20VIHAAN%20SONAL&am=2350&cu=INR"
       }
     }
     
