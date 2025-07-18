@@ -1,14 +1,14 @@
     {
       "registrationStatus": "on",
       "With MUN + Socials": {
-        "price": "₹ 3,350",
+        "price": "₹ 3,050",
         "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
-        "phonePeLink": "upi://pay?pa=9322759166-2@axl&pn=CHOUDHARY%20VIHAAN%20SONAL&am=3350&cu=INR"
+        "phonePeLink": "upi://pay?pa=9322759166-2@axl&pn=CHOUDHARY%20VIHAAN%20SONAL&am=3050&cu=INR"
       },
       "MUN Only": {
-        "price": "₹ 2,350",
+        "price": "₹ 2,150",
         "qr": "https://raw.githubusercontent.com/parth-sancheti-5/NashCon/main/qr_2.jpg",
-        "phonePeLink": "upi://pay?pa=9322759166-2@axl&pn=CHOUDHARY%20VIHAAN%20SONAL&am=2350&cu=INR"
+        "phonePeLink": "upi://pay?pa=9322759166-2@axl&pn=CHOUDHARY%20VIHAAN%20SONAL&am=2150&cu=INR"
       }
     }
     
